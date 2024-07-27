@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Inter:wght@200;600;800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Merriweather";
+  font-weight: 400;
+  font-style: normal;
+  color: #313131;
+}
+
+.cap {
+  width: 100vw;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  background-color: #E9DED4;
+  position: relative;
+  overflow: hidden;
+}
+
+.cap::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/header/texture.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.5; /* Adjust the opacity value as needed */
+  z-index: 0;
+}
+
+.cap > * {
+  position: relative;
+  z-index: 1; /* Ensure content is above the pseudo-element */
+}
+.content{
+  width: 100vw;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.container{
+  width: 1222px;
+  min-height: 0px;
+}
+
+.illustrate{
+  background-image: url("../images/header/city.png");
+  background-size: cover;
+  background-position: center bottom;
+  width: 1627px;
+  height: calc(100% - 45px);
+  position: absolute;
+
+}
+
+.runline{
+  background-color: #F54932;
+  height: 60px;
+  min-width: 100vw;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.line_text{
+
+}
+
+.logo_block{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 15px;
+}
+.logo_block_logo{
+  min-width: 245.17px;
+  height: 36px;
+}
+
+.header_content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 542px;
+  height: 444px;
+  margin-top: 33px;
+}
+.header_content_form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+.header_content_form_title{
+  font-size: 60px;
+  line-height: 66px;
+  text-transform: uppercase;
+}
+.header_content_form_title_one{}
+.header_content_form_title_two{
+  width: 100%;
+  text-align: center;
+}
+.header_content_form_title_three{
+  width: 100%;
+  text-align: center;
+}
+.header_content_form_description{
+  width: 100%;
+  height: 46px;
+  text-align: center;
+  font-family: "Golos Text", sans-serif;
+  font-size: 18px;
+}
+.header_content_form_btns{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.btns{
+  width: 219px;
+  padding: 20px;
+  height: 28px;
+  font-family: "Golos Text", sans-serif;
+  font-size: 16px;
+  border: 2px solid #1F1F1F;
+  border-radius: 66px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.header_content_form_btns_left{
+  background-color: #1F1F1F;
+  color: #FFF;
+  transition: 0.2s;
+}
+.header_content_form_btns_left:hover{
+  background-color: #FBCE51;
+  color: #1F1F1F;
+  transition: 0.2s;
+  border: 2px solid #FBCE51;
+}
+.header_content_form_btns_right{
+  background-color: rgba(0,0,0,0);
+  color: #1F1F1F;
+  transition: 0.2s;
+}
+.header_content_form_btns_right:hover{
+  background-color: #1F1F1F;
+  color: #FFF;
+  transition: 0.2s;
+}
+
+/*////////////////////// КОНТЕНТ ///////////////////////////////*/
+
+.helper_block{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 36px;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+.helper_block_text {
+}
+
+.helper_block_text_red{
+  color: #F54932;
+}
+.helper_block_img{
+  width: 394px;
+  height: 250px;
+  background-image: url("../images/helperchess.png");
+  background-size: cover;
+  background-position: center center;
+  border-radius: 50%;
+}
+
+.planchess_img{
+  position: relative;
+  width: 528px;
+  height: 609px;
+}
+
+.planchess_img_man{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/manchess.png');
+  background-size: cover;
+}
+.planchess_img_back{
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/maskandchess.png');
+  background-size: cover;
+  mask-image: url('../images/manchess.png');
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-composite: intersect;
+  background-blend-mode: multiply;
+  mix-blend-mode: multiply; /* Модус смешивания для наложения текстуры */
+  pointer-events: none; /* Игнорировать события для текстуры */
+}
