@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/gamers.css">
    <title>Document</title>
     <style>
         .scroll-container {
@@ -32,12 +33,24 @@
         'Шахматы двигают вперед не только культуру, но и экономику!',
         'Лед тронулся, господа присяжные заседатели!',
     ]
+    const mans = ['Хозе-Рауль Капабланка', 'Эммануил Ласкер', 'Александр Алехин', 'Арон Нимцович', 'Рихард Рети', 'Остап Бендер']
+
+    const cards = [
+            [{text:'Строительство железнодорожной магистрали Москва-Васюки', num: 1},{text:'Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов', num: 2}],
+            [{text:'Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет', num: 3}],
+            [{text:'Строительство дворца для турнира', num: 4},{text:'Размещение гаражей для гостевого автотранспорта', num: 5}],
+            [{text:'Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов', num: 6}],
+            [{text:'Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн', num: 7}]
+    ]
+
+
+
 </script>
 <div class="cap ">
     <div class="illustrate"></div>
     <div class="container ">
         <div class="logo_block">
-            <div class="logo_block_logo"><img src="./images/header/logo.png"/></div>
+            <div class="logo_block_logo"><img class="logo" src="./images/header/logo.png"/></div>
         </div>
         <div class="header_content">
             <div class="header_content_form">
@@ -68,7 +81,16 @@
                 <p>турнир посетите лекцию на тему:</p>
                 <p class="helper_block_text_red">«Плодотворная дебютная идея»</p>
             </div>
+            <div class="helper_block_text_mobile">
+                <p>Чтобы поддержать </p>
+                <p>Международный васюкинский </p>
+                <p>турнир</p>
+            </div>
             <div class="helper_block_img"></div>
+            <div class="helper_block_text_mobile">
+                <p>посетите лекцию на тему:</p>
+                <p class="helper_block_text_red">«Плодотворная дебютная идея»</p>
+            </div>
         </div>
         <div class="planchess">
             <div class="planchess_img">
@@ -112,6 +134,7 @@
                 <div class="vasukov_title_one">Этапы преображения</div>
                 <div class="vasukov_title_two">Васюков
                     <span class="vasukov_title_span">Будущие источники обогащения васюкинцев</span></div>
+                <span class="vasukov_title_span_mobile">Будущие источники обогащения васюкинцев</span>
             </div>
             <div class="vasukov_poligon">
                 <img src="./images/planer.png" class="vasukov_poligon_planer" alt="">
@@ -148,104 +171,279 @@
                     <div class="vasukov_poligon_d_s_text cuttext">Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн</div>
                 </div>
             </div>
+            <div class="vasukov_poligon_mobile">
+                <img src="./images/planer.png" class="vasukov_poligon_planer" alt="">
+                <div class="vasukov_poligon_scroll" id="scrollcards"></div>
+
+            </div>
+            <div class="vasukov_poligon__btns">
+                <div class="controll_next gamers_cap_controller_left" id="cardl"><img src="images/next.svg" style="width: 30%; margin-left: 4px;"></div>
+                <div class="vasukov_poligon__btns_comas" id="comas"></div>
+                <div class="controll_next gamers_cap_controller_right" id="cardr"><img src="images/next.svg" style="width: 30%; margin-left: 4px;"></div>
+            </div>
         </div>
         <div class="gamers">
             <div class="gamers_cap">
                 <div class="gamers_cap_title">Участники турнира</div>
                 <div class="gamers_cap_controller">
-                    <div class="controll_next gamers_cap_controller_left"><img src="images/next.svg"></div>
+                    <div class="controll_next gamers_cap_controller_left" id="buttonleft"><img src="images/next.svg"></div>
                     <div class="gamers_cap_controller_position"><span id="positionleft">3</span>/<span id="positionright" style="opacity: 0.6;">6</span></div>
-                    <div class="controll_next gamers_cap_controller_right"><img src="images/next.svg"></div>
+                    <div class="controll_next gamers_cap_controller_right" id="buttonright"><img src="images/next.svg"></div>
+                </div>
+
+            </div>
+            <div class="gamers_scroll" id="scrollContainer"></div>
+            <div class="gamers_cap_controller_m">
+                <div class="gamers_cap_controller_mobile">
+                    <div class="controll_next gamers_cap_controller_left" id="leftgamer"><img src="images/next.svg"></div>
+                    <div class="gamers_cap_controller_position"><span id="positionleftgamer">1</span>/<span id="positionrightgamer" style="opacity: 0.6;">6</span></div>
+                    <div class="controll_next gamers_cap_controller_right" id="rightgamer"><img src="images/next.svg"></div>
                 </div>
             </div>
-            <div class="gamers_scroll">
-                <div class="gamers_scroll_man">
-                    <div class="gamers_scroll_man_avatar"></div>
-                    <div class="gamers_scroll_man_name">
-                        <div class="gamers_scroll_man_name_fio">Хозе-Рауль Капабланка</div>
-                        <div class="gamers_scroll_man_name_status">Чемпион мира по шахматам</div>
-                    </div>
-                    <div class="gamers_scroll_man_more">Подробнее</div>
-                </div>
-                <div class="gamers_scroll_man">
-                    <div class="gamers_scroll_man_avatar"></div>
-                    <div class="gamers_scroll_man_name">
-                        <div class="gamers_scroll_man_name_fio">Эммануил Ласкер</div>
-                        <div class="gamers_scroll_man_name_status">Чемпион мира по шахматам</div>
-                    </div>
-                    <div class="gamers_scroll_man_more">Подробнее</div>
-                </div>
-                <div class="gamers_scroll_man">
-                    <div class="gamers_scroll_man_avatar"></div>
-                    <div class="gamers_scroll_man_name">
-                        <div class="gamers_scroll_man_name_fio">Александр Алехин</div>
-                        <div class="gamers_scroll_man_name_status">Чемпион мира по шахматам</div>
-                    </div>
-                    <div class="gamers_scroll_man_more">Подробнее</div>
-                </div>
-                <div class="gamers_scroll_man">
-                    <div class="gamers_scroll_man_avatar"></div>
-                    <div class="gamers_scroll_man_name">
-                        <div class="gamers_scroll_man_name_fio">Хозе-Рауль Капабланка</div>
-                        <div class="gamers_scroll_man_name_status">Чемпион мира по шахматам</div>
-                    </div>
-                    <div class="gamers_scroll_man_more">Подробнее</div>
-                </div>
-                <div class="gamers_scroll_man">
-                    <div class="gamers_scroll_man_avatar"></div>
-                    <div class="gamers_scroll_man_name">
-                        <div class="gamers_scroll_man_name_fio">Эммануил Ласкер</div>
-                        <div class="gamers_scroll_man_name_status">Чемпион мира по шахматам</div>
-                    </div>
-                    <div class="gamers_scroll_man_more">Подробнее</div>
-                </div>
-                <div class="gamers_scroll_man">
-                    <div class="gamers_scroll_man_avatar"></div>
-                    <div class="gamers_scroll_man_name">
-                        <div class="gamers_scroll_man_name_fio">Александр Алехин</div>
-                        <div class="gamers_scroll_man_name_status">Чемпион мира по шахматам</div>
-                    </div>
-                    <div class="gamers_scroll_man_more">Подробнее</div>
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
-
-
-
-<div class="scroll-container" id="scrollContainer">
-    <div class="scroll-content">
-        <p>Здесь может быть длинное содержимое, которое нужно прокручивать.</p>
+<div class="content">
+    <div class="runline" style="position: relative; margin: 0px;">
+        <div class="line_text"></div>
+    </div>
+</div>
+<div class="content" style="background-color: #E9DED4;">
+    <div class="container">
+        <div class="ps">Все персонажи, события и цитаты являются вымышленными и не принадлежат создателям сайта. С подробностями можно познакомиться в главе XXXIV романа Ильи Ильфа и Евгения Петрова «Двенадцать стульев».</div>
     </div>
 </div>
 
-<div class="button-container">
-    <button onclick="scrollLeft()">Прокрутить влево</button>
-    <button onclick="scrollRight()">Прокрутить вправо</button>
-</div>
-
+<div><p></p><div></div></div>
 <script>
-    const scrollAmount = 100; // Количество пикселей для прокрутки
+    const runblocks = document.querySelectorAll('.line_text')
+    const container = document.getElementById('scrollContainer');
+    const positionleft = document.getElementById('positionleft');
+    const scrollcards = document.getElementById('scrollcards');
+    const comas = document.getElementById('comas');
+    const posleftgamer = document.getElementById('positionleftgamer')
 
-    function scrollLeft() {
-        const container = document.getElementById('scrollContainer');
-        const newScrollLeft = Math.max(0, container.scrollLeft - scrollAmount);
-        container.scrollTo({
-            left: newScrollLeft,
-            behavior: 'smooth'
-        });
+    for(let i = 0; i < cards.length; i++){
+        comas.innerHTML += `
+            <div class="comacard" id="comacard${i}"></div>
+        `
     }
 
-    function scrollRight() {
-        const container = document.getElementById('scrollContainer');
-        const maxScrollLeft = container.scrollWidth - container.clientWidth;
-        const newScrollLeft = Math.min(maxScrollLeft, container.scrollLeft + scrollAmount);
-        container.scrollTo({
-            left: newScrollLeft,
-            behavior: 'smooth'
-        });
+    runblocks.forEach(e=>{
+        for(let i=0; i<30; i++){
+            runline.forEach(text=>{
+                e.innerHTML += `<p class="textline">${text}</p><div class="coma"></div>`
+            })
+        }
+
+    })
+
+    cards.map((card, index)=>{
+        scrollcards.innerHTML += `
+            <div class="vasukov_poligon__single">
+                <div class="vasukov_poligon__single_line" id="card${index}"></div>
+            </div>
+        `
+        const thiscard = document.getElementById(`card${index}`)
+        card.forEach(single=>{
+            thiscard.innerHTML += `
+                <div class="vasukov_poligon__single_line_strock">
+                    <div class="vasukov_poligon_d_s_radius">${single.num}</div>
+                    <div class="vasukov_poligon_d_s_text">${single.text}</div>
+                </div>
+            `
+        })
+    })
+
+
+    mans.forEach(man=>{
+        container.innerHTML += `
+            <div class = "gamers_scroll_man" >
+                <div class = "gamers_scroll_man_avatar" > </div>
+                <div class="gamers_scroll_man_name">
+                    <div class="gamers_scroll_man_name_fio">${man}</div>
+                    <div class="gamers_scroll_man_name_status">Чемпион мира по шахматам</div>
+                </div>
+                <div class="gamers_scroll_man_more" ">Подробнее</div>
+            </div>
+        `
+    })
+
+    const btnleft = document.getElementById('buttonleft')
+    const btnright = document.getElementById('buttonright')
+    const btnleftcard = document.getElementById('cardl')
+    const btnrightcard = document.getElementById('cardr')
+    const btnleftg = document.getElementById('leftgamer')
+    const btnrightg = document.getElementById('rightgamer')
+
+
+    let scrollAmount = 1222;
+    let scrollCard = 335;
+
+    let comacard = 0
+    if(comacard === 0){
+        const thiscoma = document.getElementById(`comacard${comacard}`)
+        thiscoma.style.backgroundColor = '#313131'
     }
+
+    let stop = false
+    if(!stop){
+        btnleft.className = 'controll_next_close_rotate'
+    }
+
+    let posgamers = 1
+
+    const writeNumberGamer = (item) => {
+        posleftgamer.innerHTML = item
+    }
+
+    function scrollLeft(container, scrollAmount, mobile=false) {
+        if(mobile){
+            console.log('на лево')
+            if(posgamers !== 1){
+                posgamers--
+                writeNumberGamer(posgamers)
+                const newScrollLeft = Math.max(0, container.scrollLeft - scrollAmount);
+                container.scrollTo({
+                    left: newScrollLeft,
+                    behavior: 'smooth'
+                });
+                if(posgamers === 1){
+                    btnleftg.style.backgroundColor = '#CCC'
+                    btnrightg.style.backgroundColor = '#313131'
+                }else if(posgamers === mans.length){
+                    btnleftg.style.backgroundColor = '#313131'
+                    btnrightg.style.backgroundColor = '#CCC'
+                }else{
+                    btnleftg.style.backgroundColor = '#313131'
+                    btnrightg.style.backgroundColor = '#313131'
+                }
+            }
+        }else{
+            if(stop) {
+
+                const newScrollLeft = Math.max(0, container.scrollLeft - scrollAmount);
+                container.scrollTo({
+                    left: newScrollLeft,
+                    behavior: 'smooth'
+                });
+                stop = false
+                if(!stop){
+                    btnleft.className = 'controll_next_close_rotate'
+                    btnright.className = 'controll_next gamers_cap_controller_right'
+                    positionleft.innerHTML = '3'
+                }
+            }
+        }
+
+    }
+
+    function scrollRight(container, scrollAmount, mobile=false) {
+        if(mobile){
+            console.log('на право')
+            if(posgamers < mans.length){
+                posgamers++
+                writeNumberGamer(posgamers)
+                const maxScrollLeft = container.scrollWidth - container.clientWidth;
+                const newScrollLeft = Math.min(maxScrollLeft, container.scrollLeft + scrollAmount);
+                container.scrollTo({
+                    left: newScrollLeft,
+                    behavior: 'smooth'
+                });
+                if(posgamers === 1){
+                    btnleftg.style.backgroundColor = '#CCC'
+                    btnrightg.style.backgroundColor = '#313131'
+                }else if(posgamers === mans.length){
+                    btnleftg.style.backgroundColor = '#313131'
+                    btnrightg.style.backgroundColor = '#CCC'
+                }else{
+                    btnleftg.style.backgroundColor = '#313131'
+                    btnrightg.style.backgroundColor = '#313131'
+                }
+            }
+        }else{
+            if(!stop){
+                const maxScrollLeft = container.scrollWidth - container.clientWidth;
+                const newScrollLeft = Math.min(maxScrollLeft, container.scrollLeft + scrollAmount);
+                container.scrollTo({
+                    left: newScrollLeft,
+                    behavior: 'smooth'
+                });
+                stop = true
+                if(stop){
+                    btnright.className = 'controll_next_close'
+                    btnleft.className = 'controll_next gamers_cap_controller_left'
+                    positionleft.innerHTML = '6'
+                }
+            }
+        }
+
+
+    }
+
+
+    const comaCheck = (el) =>{
+        const allcoma = document.querySelectorAll('.comacard')
+        allcoma.forEach(e=>{
+            e.style.backgroundColor = '#CCC'
+        })
+        const activecoma = document.getElementById(`comacard${el}`)
+        activecoma.style.backgroundColor = '#313131'
+    }
+
+    function scrollLeftCard(container, scrollAmount) {
+
+        if(comacard!==0){
+            const newScrollLeft = Math.max(0, container.scrollLeft - scrollAmount);
+            container.scrollTo({
+                left: newScrollLeft,
+                behavior: 'smooth'
+            });
+            comacard--
+            comaCheck(comacard)
+            if(comacard===0){
+                btnleftcard.style.backgroundColor = '#CCC'
+                btnrightcard.style.backgroundColor = '#313131'
+            }else{
+                btnleftcard.style.backgroundColor = '#313131'
+                btnrightcard.style.backgroundColor = '#313131'
+            }
+        }
+
+    }
+
+    function scrollRightCard(container, scrollAmount) {
+        if(comacard+1!==cards.length){
+            const maxScrollLeft = container.scrollWidth - container.clientWidth;
+            const newScrollLeft = Math.min(maxScrollLeft, container.scrollLeft + scrollAmount);
+            container.scrollTo({
+                left: newScrollLeft,
+                behavior: 'smooth'
+            });
+            comacard++
+            comaCheck(comacard)
+            if(comacard+1===cards.length){
+                btnrightcard.style.backgroundColor = '#CCC'
+                btnleftcard.style.backgroundColor = '#313131'
+            }else{
+                btnrightcard.style.backgroundColor = '#313131'
+                btnleftcard.style.backgroundColor = '#313131'
+            }
+        }
+
+
+
+
+    }
+
+
+    btnleft.addEventListener('click', ()=>{scrollLeft(container, scrollAmount)})
+    btnright.addEventListener('click', ()=>{scrollRight(container, scrollAmount)})
+    btnleftg.addEventListener('click', ()=>{scrollLeft(container, scrollCard,true)})
+    btnrightg.addEventListener('click', ()=>{scrollRight(container, scrollCard,true)})
+    btnleftcard.addEventListener('click', ()=>{scrollLeftCard(scrollcards,scrollCard)})
+    btnrightcard.addEventListener('click', ()=>{scrollRightCard(scrollcards,scrollCard)})
 </script>
 </body>
 </html>

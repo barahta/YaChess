@@ -1,0 +1,242 @@
+.gamers{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+.gamers_cap{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.gamers_cap_title{
+    text-transform: uppercase;
+    line-height: 64.8px;
+    font-size: 54px;
+
+}
+.gamers_cap_controller{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 151px;
+}
+.gamers_cap_controller_mobile{
+    display: none;
+}
+
+
+.gamers_cap_controller_left{
+    rotate: 180deg;
+}
+.gamers_cap_controller_position{
+    font-family: "Golos Text", sans-serif;
+    font-size: 16px;
+}
+#positionleft{
+    font-family: "Golos Text", sans-serif;
+    font-size: 16px;
+}
+#positionright{
+    font-family: "Golos Text", sans-serif;
+    font-size: 16px;
+}
+.gamers_cap_controller_right {
+}
+
+.gamers_scroll{
+    width: 100%;
+    display: flex;
+    overflow-x: hidden;
+    margin-top: 50px;
+}
+.gamers_scroll_man{
+    min-width: 394px;
+    height: 462px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20px;
+}
+.gamers_scroll_man_avatar{
+    width: 320px;
+    height: 320px;
+    border-radius: 160px;
+    background-image: url("../images/gamer.png");
+    background-size: cover;
+    background-position: center center;
+}
+.gamers_scroll_man_name{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.gamers_scroll_man_name_fio{
+    font-family: "Golos Text", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+.gamers_scroll_man_name_status{
+    font-family: "Golos Text", sans-serif;
+    font-size: 20px;
+    opacity: 0.6;
+    margin-top: 5px;
+}
+.gamers_scroll_man_more{
+    width: 113px;
+    height: 35px;
+    /*padding: 12px;*/
+    border-radius: 62px;
+    border: 1px solid #3057A2;
+    font-family: "Golos Text", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3057A2;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.gamers_scroll_man_more:hover{
+    background-color: #3057A2;
+    color: #FFFFFF;
+    transition: .2s;
+}
+
+@media screen and (max-width: 400px){
+    .gamers{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 120px;
+        margin-bottom: 200px;
+    }
+    .gamers_cap{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .gamers_cap_title{
+        text-transform: uppercase;
+        line-height: 39.6px;
+        font-size: 36px;
+
+    }
+    .gamers_cap_controller{
+        display: none;
+    }
+
+    .gamers_cap_controller_m{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        margin-bottom: -80px;
+    }
+
+    .gamers_cap_controller_mobile{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 151px;
+    }
+
+
+    .gamers_cap_controller_left{
+        rotate: 180deg;
+    }
+    .gamers_cap_controller_position{
+        font-family: "Golos Text", sans-serif;
+        font-size: 16px;
+    }
+    #positionleft{
+        font-family: "Golos Text", sans-serif;
+        font-size: 16px;
+    }
+    #positionright{
+        font-family: "Golos Text", sans-serif;
+        font-size: 16px;
+    }
+    .gamers_cap_controller_right {
+    }
+
+    .gamers_scroll{
+        width: 100%;
+        display: flex;
+        overflow-x: hidden;
+        margin-top: 50px;
+    }
+    .gamers_scroll_man{
+        min-width: 100%;
+        height: 388px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 0px;
+    }
+    .gamers_scroll_man_avatar{
+        width: 244px;
+        height: 244px;
+        border-radius: 160px;
+        background-image: url("../images/gamer.png");
+        background-size: cover;
+        background-position: center center;
+    }
+    .gamers_scroll_man_name{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .gamers_scroll_man_name_fio{
+        font-family: "Golos Text", sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+    }
+    .gamers_scroll_man_name_status{
+        font-family: "Golos Text", sans-serif;
+        font-size: 20px;
+        opacity: 0.6;
+        margin-top: 5px;
+    }
+    .gamers_scroll_man_more{
+        width: 113px;
+        height: 35px;
+        /*padding: 12px;*/
+        border-radius: 62px;
+        border: 1px solid #3057A2;
+        font-family: "Golos Text", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #3057A2;
+        cursor: pointer;
+        transition: .2s;
+    }
+
+    .gamers_scroll_man_more:hover{
+        background-color: #3057A2;
+        color: #FFFFFF;
+        transition: .2s;
+    }
+
+    #positionleftgamer{
+        font-family: "Golos Text", sans-serif;
+        font-size: 16px;
+    }
+    #positionrightgamer{
+        font-family: "Golos Text", sans-serif;
+        font-size: 16px;
+    }
+}
