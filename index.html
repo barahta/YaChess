@@ -8,23 +8,6 @@
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/gamers.css">
    <title>Document</title>
-    <style>
-        .scroll-container {
-            width: 300px;
-            overflow-x: auto;
-            white-space: nowrap;
-            border: 1px solid #ccc;
-        }
-
-        .scroll-content {
-            display: inline-block;
-            width: 1000px; /* Ширина содержимого больше контейнера */
-        }
-
-        .button-container {
-            margin-top: 10px;
-        }
-    </style>
 </head>
 <body>
 <script>
@@ -61,8 +44,8 @@
                 </div>
                 <div class="header_content_form_description">Оплатите взнос на телеграммы для организации Международного васюкинского турнира по шахматам</div>
                 <div class="header_content_form_btns">
-                    <div class="header_content_form_btns_left btns">Поддержать шахматную мысль</div>
-                    <div class="header_content_form_btns_right btns">Подробнее о турнире</div>
+                    <a href="#yakhelp"><div class="header_content_form_btns_left btns">Поддержать шахматную мысль</div></a>
+                    <a href="#yachess"><div class="header_content_form_btns_right btns">Подробнее о турнире</div></a>
                 </div>
             </div>
         </div>
@@ -74,7 +57,7 @@
 <div class="content">
 
     <div class="container">
-        <div class="helper_block">
+        <div class="helper_block" id="yakhelp">
             <div class="helper_block_text">
                 <p>Чтобы поддержать </p>
                 <p>Международный васюкинский </p>
@@ -98,7 +81,7 @@
                 <div class="planchess_img_back"></div>
             </div>
             <div class="planchess_board">
-                <div class="planchess_board_title">
+                <div class="planchess_board_title"  id="yachess">
                     и Сеанс <span class="planchess_board_title_red">одновременной игры в шахматы на 160 досках</span> гроссмейстера О. Бендера
                 </div>
                 <div class="planchess_board_table">
@@ -256,9 +239,9 @@
         })
     })
 
-
-    mans.forEach(man=>{
-        container.innerHTML += `
+    const makeMansConteiner = () => {
+        mans.forEach(man=>{
+            container.innerHTML += `
             <div class = "gamers_scroll_man" >
                 <div class = "gamers_scroll_man_avatar" > </div>
                 <div class="gamers_scroll_man_name">
@@ -268,7 +251,9 @@
                 <div class="gamers_scroll_man_more" ">Подробнее</div>
             </div>
         `
-    })
+        })
+    }
+    makeMansConteiner()
 
     const btnleft = document.getElementById('buttonleft')
     const btnright = document.getElementById('buttonright')
@@ -276,7 +261,7 @@
     const btnrightcard = document.getElementById('cardr')
     const btnleftg = document.getElementById('leftgamer')
     const btnrightg = document.getElementById('rightgamer')
-
+    const winWidth = window.innerWidth;
 
     let scrollAmount = 1222;
     let scrollCard = 335;
@@ -361,6 +346,26 @@
                     btnleftg.style.backgroundColor = '#313131'
                     btnrightg.style.backgroundColor = '#313131'
                 }
+            }else if(posgamers === mans.length){
+                posgamers = 1
+                writeNumberGamer(posgamers)
+                makeMansConteiner()
+                const maxScrollLeft = container.scrollWidth - container.clientWidth;
+                const newScrollLeft = Math.min(maxScrollLeft, container.scrollLeft + scrollAmount);
+                container.scrollTo({
+                    left: newScrollLeft,
+                    behavior: 'smooth'
+                });
+                if(posgamers === 1){
+                    btnleftg.style.backgroundColor = '#CCC'
+                    btnrightg.style.backgroundColor = '#313131'
+                }else if(posgamers === mans.length){
+                    btnleftg.style.backgroundColor = '#313131'
+                    btnrightg.style.backgroundColor = '#CCC'
+                }else{
+                    btnleftg.style.backgroundColor = '#313131'
+                    btnrightg.style.backgroundColor = '#313131'
+                }
             }
         }else{
             if(!stop){
@@ -375,6 +380,21 @@
                     btnright.className = 'controll_next_close'
                     btnleft.className = 'controll_next gamers_cap_controller_left'
                     positionleft.innerHTML = '6'
+                }
+            }else{
+                const maxScrollLeft = container.scrollWidth - container.clientWidth;
+                const newScrollLeft = Math.min(maxScrollLeft, container.scrollLeft - scrollAmount);
+                container.scrollTo({
+                    left: newScrollLeft,
+                    behavior: 'smooth'
+                });
+
+                // makeMansConteiner()
+                stop = false
+                if(!stop){
+                    btnleft.className = 'controll_next_close_rotate'
+                    btnright.className = 'controll_next gamers_cap_controller_right'
+                    positionleft.innerHTML = '3'
                 }
             }
         }
@@ -444,6 +464,17 @@
     btnrightg.addEventListener('click', ()=>{scrollRight(container, scrollCard,true)})
     btnleftcard.addEventListener('click', ()=>{scrollLeftCard(scrollcards,scrollCard)})
     btnrightcard.addEventListener('click', ()=>{scrollRightCard(scrollcards,scrollCard)})
+
+    setInterval(()=>{
+        if(winWidth > 400){
+            scrollRight(container, scrollAmount)
+        }else{
+            scrollRight(container, scrollCard,true)
+        }
+
+    },2000)
+
+
 </script>
 </body>
 </html>

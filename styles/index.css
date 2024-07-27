@@ -140,7 +140,9 @@
   align-items: center;
   width: 100%;
 }
-
+a {
+  text-decoration: none;
+}
 .btns{
   width: 219px;
   padding: 20px;
