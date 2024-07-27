@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/gamers.css">
-   <title>Document</title>
+   <title>Клуб четырех коней</title>
 </head>
 <body>
 <script>
@@ -25,9 +25,6 @@
             [{text:'Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов', num: 6}],
             [{text:'Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн', num: 7}]
     ]
-
-
-
 </script>
 <div class="cap ">
     <div class="illustrate"></div>
@@ -198,7 +195,6 @@
     </div>
 </div>
 
-<div><p></p><div></div></div>
 <script>
     const runblocks = document.querySelectorAll('.line_text')
     const container = document.getElementById('scrollContainer');
@@ -206,11 +202,30 @@
     const scrollcards = document.getElementById('scrollcards');
     const comas = document.getElementById('comas');
     const posleftgamer = document.getElementById('positionleftgamer')
+    const btnleft = document.getElementById('buttonleft')
+    const btnright = document.getElementById('buttonright')
+    const btnleftcard = document.getElementById('cardl')
+    const btnrightcard = document.getElementById('cardr')
+    const btnleftg = document.getElementById('leftgamer')
+    const btnrightg = document.getElementById('rightgamer')
+    const winWidth = window.innerWidth;
+    let scrollAmount = 1222;
+    let scrollCard = 335;
+    let comacard = 0
+    let stop = false
+    let posgamers = 1
 
     for(let i = 0; i < cards.length; i++){
         comas.innerHTML += `
             <div class="comacard" id="comacard${i}"></div>
         `
+    }
+    if(comacard === 0){
+        const thiscoma = document.getElementById(`comacard${comacard}`)
+        thiscoma.style.backgroundColor = '#313131'
+    }
+    if(!stop){
+        btnleft.className = 'controll_next_close_rotate'
     }
 
     runblocks.forEach(e=>{
@@ -219,7 +234,6 @@
                 e.innerHTML += `<p class="textline">${text}</p><div class="coma"></div>`
             })
         }
-
     })
 
     cards.map((card, index)=>{
@@ -255,35 +269,15 @@
     }
     makeMansConteiner()
 
-    const btnleft = document.getElementById('buttonleft')
-    const btnright = document.getElementById('buttonright')
-    const btnleftcard = document.getElementById('cardl')
-    const btnrightcard = document.getElementById('cardr')
-    const btnleftg = document.getElementById('leftgamer')
-    const btnrightg = document.getElementById('rightgamer')
-    const winWidth = window.innerWidth;
 
-    let scrollAmount = 1222;
-    let scrollCard = 335;
 
-    let comacard = 0
-    if(comacard === 0){
-        const thiscoma = document.getElementById(`comacard${comacard}`)
-        thiscoma.style.backgroundColor = '#313131'
-    }
 
-    let stop = false
-    if(!stop){
-        btnleft.className = 'controll_next_close_rotate'
-    }
-
-    let posgamers = 1
 
     const writeNumberGamer = (item) => {
         posleftgamer.innerHTML = item
     }
 
-    function scrollLeft(container, scrollAmount, mobile=false) {
+    const scrollLeft = (container, scrollAmount, mobile=false) => {
         if(mobile){
             console.log('на лево')
             if(posgamers !== 1){
@@ -324,7 +318,7 @@
 
     }
 
-    function scrollRight(container, scrollAmount, mobile=false) {
+    const scrollRight = (container, scrollAmount, mobile=false) => {
         if(mobile){
             console.log('на право')
             if(posgamers < mans.length){
@@ -412,7 +406,7 @@
         activecoma.style.backgroundColor = '#313131'
     }
 
-    function scrollLeftCard(container, scrollAmount) {
+    const scrollLeftCard = (container, scrollAmount) => {
 
         if(comacard!==0){
             const newScrollLeft = Math.max(0, container.scrollLeft - scrollAmount);
@@ -433,7 +427,7 @@
 
     }
 
-    function scrollRightCard(container, scrollAmount) {
+    const scrollRightCard = (container, scrollAmount) => {
         if(comacard+1!==cards.length){
             const maxScrollLeft = container.scrollWidth - container.clientWidth;
             const newScrollLeft = Math.min(maxScrollLeft, container.scrollLeft + scrollAmount);
@@ -451,10 +445,6 @@
                 btnleftcard.style.backgroundColor = '#313131'
             }
         }
-
-
-
-
     }
 
 
@@ -466,12 +456,7 @@
     btnrightcard.addEventListener('click', ()=>{scrollRightCard(scrollcards,scrollCard)})
 
     setInterval(()=>{
-        if(winWidth > 400){
-            scrollRight(container, scrollAmount)
-        }else{
-            scrollRight(container, scrollCard,true)
-        }
-
+        (winWidth > 400)?scrollRight(container, scrollAmount):scrollRight(container, scrollCard,true)
     },2000)
 
 

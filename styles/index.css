@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Inter:wght@200;600;800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700&display=swap');
-
 *{
   margin: 0;
   padding: 0;
@@ -9,27 +8,22 @@
   color: #313131;
   /*outline: 1px solid #F54932;*/
 }
-
-
 .content{
   width: 100%;
   min-height: 10px;
   display: flex;
   justify-content: center;
 }
-
 .container{
   width: 1222px;
   min-height: 0px;
 }
-
 @media screen and (max-width: 400px){
   .container{
     width: 336px;
     min-height: 0px;
   }
 }
-
 .cap {
   width: 100%;
   height: 700px;
@@ -39,7 +33,6 @@
   position: relative;
   overflow: hidden;
 }
-
 .cap::before {
   content: "";
   position: absolute;
@@ -53,13 +46,10 @@
   opacity: 0.2; /* Adjust the opacity value as needed */
   z-index: 0;
 }
-
 .cap > * {
   position: relative;
   z-index: 1; /* Ensure content is above the pseudo-element */
 }
-
-
 .illustrate{
   background-image: url("../images/header/city.png");
   background-size: cover;
@@ -69,7 +59,6 @@
   position: absolute;
 
 }
-
 .runline{
   background-color: #F54932;
   height: 60px;
@@ -80,11 +69,9 @@
   display: flex;
   align-items: center;
 }
-
 .line_text{
 
 }
-
 .logo_block{
   width: 100%;
   display: flex;
@@ -95,7 +82,6 @@
   min-width: 245.17px;
   height: 36px;
 }
-
 .header_content{
   display: flex;
   flex-direction: column;
@@ -158,7 +144,6 @@ a {
   font-weight: 500;
   cursor: pointer;
 }
-
 .header_content_form_btns_left{
   background-color: #1F1F1F;
   color: #FFF;
@@ -180,7 +165,6 @@ a {
   color: #FFF;
   transition: 0.2s;
 }
-
 @media screen and (max-width: 400px){
   .cap {
     width: 100%;
@@ -339,9 +323,6 @@ a {
     transition: 0.2s;
   }
 }
-
-/*////////////////////// КОНТЕНТ ///////////////////////////////*/
-
 .helper_block{
   display: flex;
   justify-content: space-between;
@@ -351,9 +332,6 @@ a {
   margin-top: 70px;
   margin-bottom: 70px;
 }
-.helper_block_text {
-}
-
 .helper_block_text_red{
   color: #F54932;
 }
@@ -401,7 +379,6 @@ a {
     margin: 30px 0;
   }
 }
-
 .planchess{
   display: flex;
   justify-content: space-between;
@@ -412,15 +389,12 @@ a {
   margin-bottom: 70px;
 
 }
-
-
 .planchess_img{
   position: relative;
   width: 528px;
   height: 609px;
   margin-left: -50px;
 }
-
 .planchess_img_man{
   position: absolute;
   top: 0;
@@ -447,7 +421,6 @@ a {
   mix-blend-mode: color-burn; /* Модус смешивания для наложения текстуры */
   pointer-events: none; /* Игнорировать события для текстуры */
 }
-
 .planchess_board{
   display: flex;
   flex-direction: column;
@@ -470,7 +443,6 @@ a {
   margin-top: 100px;
   color: #313131;
 }
-
 .planchess_board_table_line{
   display: flex;
   justify-content: flex-start;
@@ -508,21 +480,18 @@ a {
   align-items: center;
   padding-left: 15px;
 }
-
 .aitop{
   align-items: flex-start;
 }
 .aibottom{
   align-items: flex-end;
 }
-
 .planchess_board_link{
   font-family: "Golos Text", sans-serif;
   font-size: 20px;
   color: #3057A2;
   margin-top: 70px;
 }
-
 .planchess_board_table_line_outprice{
   font-family: "Golos Text", sans-serif;
   font-size: 20px;
@@ -539,7 +508,6 @@ a {
   height: 2px;
   background-color: #F54932;
 }
-
 @media screen and (max-width: 400px){
   .planchess{
     display: flex;
@@ -682,8 +650,6 @@ a {
     background-color: #F54932;
   }
 }
-
-
 .vasukov{
   width: 100%;
   margin-top: 200px;
@@ -705,7 +671,6 @@ a {
   align-items: flex-start;
   height: 54px;
 }
-
 .vasukov_title_span{
   text-transform: none;
   font-family: "Golos Text", sans-serif;
@@ -722,7 +687,6 @@ a {
 .vasukov_title_span_mobile{
   display: none;
 }
-
 .vasukov_poligon{
   width: 100%;
   height: 400px;
@@ -736,15 +700,12 @@ a {
 .vasukov_poligon_mobile{
   display: none;
 }
-
-
 .vasukov_poligon_planer{
   width: 376px;
   position: absolute;
   bottom: 0px;
   right: -60px;
 }
-
 .vasukov_poligon_doubleblock{
   display: flex;
   flex-direction: column;
@@ -786,7 +747,6 @@ a {
   display: flex;
   justify-content: flex-start;
 }
-
 .vasukov_poligon_d_s_radius{
   min-width: 36px;
   height: 36px;
@@ -809,8 +769,6 @@ a {
   width: calc(100% - 36px - 15px - 300px);
 }
 .vasukov_poligon__btns{display: none;}
-
-
 @media screen and (max-width: 400px){
   .vasukov{
     width: 100%;
@@ -948,23 +906,9 @@ a {
   }
   .vasukov_poligon__btns_right{}
 }
-
-
-
-
-
-
-
-
-
-
-
-
 .marginnone{
   margin: 0px;
 }
-
-
 .runline {
   width: 100%;
   overflow: hidden;
@@ -973,7 +917,6 @@ a {
   border: 1px solid #ccc;
   padding: 10px 0;
 }
-
 .line_text {
   display: flex;
   align-items: center;
@@ -981,14 +924,12 @@ a {
   /*left: -100%;*/
   animation: marquee 200s linear infinite;
 }
-
 .textline{
   font-size: 22px;
   line-height: 24.2px;
   color: #FFFFFF;
   text-transform: uppercase;
 }
-
 .coma{
   width: 6px;
   height: 6px;
@@ -996,7 +937,6 @@ a {
   background-color: #FFFFFF;
   margin: 0 10px;
 }
-
 @keyframes marquee {
   0% {
     transform: translateX(0%);
@@ -1005,7 +945,6 @@ a {
     transform: translateX(-100%);
   }
 }
-
 .line_text:nth-child(2) {
   left: 100%;
 }
@@ -1016,8 +955,6 @@ a {
   opacity: 0.6;
   margin: 50px 0 100px;
 }
-
-
 .controll_next{
   width: 44px;
   height: 44px;
@@ -1029,7 +966,6 @@ a {
   transition: .2s;
   cursor: pointer;
 }
-
 .controll_next_close_rotate{
   width: 44px;
   height: 44px;
@@ -1040,7 +976,6 @@ a {
   align-items: center;
   rotate: 180deg;
 }
-
 .controll_next_close{
   width: 44px;
   height: 44px;
@@ -1051,12 +986,10 @@ a {
   align-items: center;
   /*rotate: 180deg;*/
 }
-
 .controll_next:hover{
   background-color: #FBCE51;
   transition: .2s;
 }
-
 @media screen and (max-width: 400px){
   .controll_next{
     width: 36px;
