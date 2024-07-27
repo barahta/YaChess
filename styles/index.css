@@ -7,10 +7,11 @@
   font-weight: 400;
   font-style: normal;
   color: #313131;
+  /*outline: 1px solid #F54932;*/
 }
 
 .cap {
-  width: 100vw;
+  width: 100%;
   height: 700px;
   display: flex;
   justify-content: center;
@@ -38,7 +39,7 @@
   z-index: 1; /* Ensure content is above the pseudo-element */
 }
 .content{
-  width: 100vw;
+  width: 100%;
   min-height: 100px;
   display: flex;
   justify-content: center;
@@ -194,10 +195,21 @@
   border-radius: 50%;
 }
 
+.planchess{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  height: 527px;
+  margin-top: 100px;
+  margin-bottom: 70px;
+}
+
 .planchess_img{
   position: relative;
   width: 528px;
   height: 609px;
+  margin-left: -50px;
 }
 
 .planchess_img_man{
@@ -223,6 +235,324 @@
   mask-position: center;
   mask-composite: intersect;
   background-blend-mode: multiply;
-  mix-blend-mode: multiply; /* Модус смешивания для наложения текстуры */
+  mix-blend-mode: color-burn; /* Модус смешивания для наложения текстуры */
   pointer-events: none; /* Игнорировать события для текстуры */
+}
+
+.planchess_board{
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 528px);
+}
+.planchess_board_title{
+  text-transform: uppercase;
+  font-size: 36px;
+  width: calc(100% - 20px);
+}
+.planchess_board_title_red{
+  color: #F54932;
+}
+.planchess_board_table{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 100px;
+  color: #313131;
+}
+
+.planchess_board_table_line{
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 2px solid #D0D0D0;
+  width: 100%;
+  height: 54px;
+}
+.linestart{
+  height: calc(54px - 17px);
+}
+.lineend{
+  height: calc(54px - 17px);
+  border: none;
+}
+.planchess_board_table_line_td_left{
+  font-family: "Golos Text", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  width: calc(50% - 1px);
+  opacity: 0.7;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.planchess_board_table_line_td_right{
+  font-family: "Golos Text", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  width: calc(50% - 16px);
+  border-left: 2px solid #D0D0D0;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 15px;
+}
+
+.aitop{
+  align-items: flex-start;
+}
+.aibottom{
+  align-items: flex-end;
+}
+
+.planchess_board_link{
+  font-family: "Golos Text", sans-serif;
+  font-size: 20px;
+  color: #3057A2;
+  margin-top: 70px;
+}
+
+.planchess_board_table_line_outprice{
+  font-family: "Golos Text", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  position: relative;
+
+  /*text-decoration: line-through;*/
+  /*text-decoration-color: #F54932;*/
+}
+.strikeline{
+  position: absolute;
+  top: 13px;
+  width: 100%;
+  height: 2px;
+  background-color: #F54932;
+}
+
+.vasukov{
+  width: 100%;
+  margin-top: 200px;
+}
+.vasukov_title{
+  width: 100%;
+  font-size: 54px;
+  line-height: 64.8px;
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.vasukov_title_one{}
+.vasukov_title_two{
+  display: flex;
+  align-items: flex-start;
+  height: 54px;
+}
+
+.vasukov_title_span{
+  text-transform: none;
+  font-family: "Golos Text", sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  color: #3057A2;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-left: 20px;
+}
+
+.vasukov_poligon{
+  width: 100%;
+  height: 400px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+
+.vasukov_poligon_planer{
+  width: 376px;
+  position: absolute;
+  bottom: 0px;
+  right: -60px;
+}
+
+.vasukov_poligon_doubleblock{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 394px;
+  height: calc(112px * 2 + 20px);
+}
+.vasukov_poligon_doubleblock_single{
+  width: calc(100% - 40px);
+  height: calc(112px - 40px);
+  padding: 20px;
+  background-image: url("../images/backimageblock.png");
+  display: flex;
+  justify-content: flex-start;
+}
+.vasukov_poligon_bigblock{
+  width: calc(394px - 40px);
+  height: calc(112px * 2 + 20px - 40px);
+  padding: 20px;
+  background-image: url("../images/backimageblock.png");
+  display: flex;
+  justify-content: flex-start;
+}
+.vasukov_poligon_singleblock{
+  width: calc(394px - 40px);
+  height: calc(136px - 40px);
+  padding: 20px;
+  background-image: url("../images/backimageblock.png");
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+.vasukov_poligon_spaceblock{
+  width: calc(100% - 394px - 20px - 40px);
+  height: calc(136px - 40px);
+  padding: 20px;
+  background-image: url("../images/backimageblock.png");
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.vasukov_poligon_d_s_radius{
+  min-width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Golos Text", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+.vasukov_poligon_d_s_text{
+  margin-left: 15px;
+  font-family: "Golos Text", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+.cuttext{
+  width: calc(100% - 36px - 15px - 300px);
+}
+
+.gamers{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 200px;
+}
+.gamers_cap{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.gamers_cap_title{
+  text-transform: uppercase;
+  line-height: 64.8px;
+  font-size: 54px;
+
+}
+.gamers_cap_controller{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 151px;
+}
+
+.controll_next{
+  width: 44px;
+  height: 44px;
+  background-color: #313131;
+  border-radius: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gamers_cap_controller_left{
+  rotate: 180deg;
+}
+.gamers_cap_controller_position{
+  font-family: "Golos Text", sans-serif;
+  font-size: 16px;
+}
+#positionleft{
+  font-family: "Golos Text", sans-serif;
+  font-size: 16px;
+}
+#positionright{
+  font-family: "Golos Text", sans-serif;
+  font-size: 16px;
+}
+.gamers_cap_controller_right {
+}
+
+.gamers_scroll{
+  width: 100%;
+  display: flex;
+  overflow-x: hidden;
+  margin-top: 50px;
+}
+.gamers_scroll_man{
+  min-width: 394px;
+  height: 462px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 20px;
+}
+.gamers_scroll_man_avatar{
+  width: 320px;
+  height: 320px;
+  border-radius: 160px;
+  background-image: url("../images/gamer.png");
+  background-size: cover;
+  background-position: center center;
+}
+.gamers_scroll_man_name{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gamers_scroll_man_name_fio{
+  font-family: "Golos Text", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+}
+.gamers_scroll_man_name_status{
+  font-family: "Golos Text", sans-serif;
+  font-size: 20px;
+  opacity: 0.6;
+  margin-top: 5px;
+}
+.gamers_scroll_man_more{
+  width: 113px;
+  height: 35px;
+  /*padding: 12px;*/
+  border-radius: 62px;
+  border: 1px solid #3057A2;
+  font-family: "Golos Text", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3057A2;
 }
